@@ -11,7 +11,7 @@ for i in range(100):
 
     for i in range(numObj):
         for j in range(numSol):
-            rpArr[i][j][j] = 1
+            rpArr[i][j][j] = 1.0
             for k in range(numSol-1,j,-1):
                 rpArr[i][j][k] = float(randint(1,9))
                 rpArr[i][k][j] = 1/rpArr[i][j][k]
@@ -27,7 +27,7 @@ for i in range(100):
     nobjArr = [ [0 for j in range(numObj)] for i in range(numObj) ]
     objArrOvPref = [ 0 for j in range(numObj)]
     for j in range(numObj):
-        objArr[j][j] = 1
+        objArr[j][j] = 1.0
         for k in range(numObj-j-1,j,-1):
             objArr[j][k] = float(randint(1,9))
             objArr[k][j] = 1/objArr[j][k]
@@ -53,12 +53,10 @@ for i in range(100):
     qDict = {2:0.00, 3:0.52, 4:0.9, 5:1.12, 6:1.24, 7:1.32, 8:1.41}
 
     for i in range(numObj):
-        CIs_RPs[i] = (max(scipy.linalg.eigh(nrpArr[i],eigvals_only=True))-numSol)/(numSol-1)
+        CIs_RPs[i] = (max(scipy.linalg.eig(rpArr[i])[0])-numSol)/(numSol-1)
         CRs_RPs[i] = CIs_RPs[i]/qDict[numSol]
-    CI_RI = (max(scipy.linalg.eigh(nobjArr,eigvals_only=True))-numObj)/(numObj-1)
+    CI_RI = (max(scipy.linalg.eig(objArr)[0])-numObj)/(numObj-1)
     CR_RI = CI_RI/qDict[numObj]
 
     print np.array(CRs_RPs)
     print CR_RI
-
-
