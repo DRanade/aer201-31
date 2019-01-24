@@ -28,7 +28,7 @@ for i in range(100):
     objArrOvPref = [ 0 for j in range(numObj)]
     for j in range(numObj):
         objArr[j][j] = 1.0
-        for k in range(numObj-j-1,j,-1):
+        for k in range(numObj-1,j,-1):
             objArr[j][k] = float(randint(1,9))
             objArr[k][j] = 1/objArr[j][k]
     for j in range(numObj): # normalizes columns
