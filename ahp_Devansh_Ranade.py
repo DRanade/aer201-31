@@ -2,8 +2,8 @@ import numpy as np
 import scipy
 from random import randint
 from scipy import linalg
-numSol = raw_input('How many candidate solutions do you have?')
-numObj = raw_input('How many objectives do you have?')
+numSol = int(raw_input('How many candidate solutions do you have?'))
+numObj = int(raw_input('How many objectives do you have?'))
 rpArr = [[ [0 for j in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 rpArrOvPref = [ [ 0 for j in range(numSol)] for i in range(numObj)]
 nrpArr = [[ [0 for i in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
@@ -65,4 +65,4 @@ print "Below is a list of consistency ratios for each solution preference matric
 print np.array(CRs_RPs)
 print "Below is your consistency ratio for your objective matrix:"
 print CR_RI
-print "This code was written by Devansh Ranade"
+print "This code was written by Devansh Ranade, Team 31, TIRE Project"
