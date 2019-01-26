@@ -4,16 +4,10 @@ from random import randint
 from scipy import linalg
 numSol = " "
 while type(numSol) != int:
-    numSol = int(raw_input('How many candidate solutions do you have? (You can not put in 2, or there will be a [DivideByZero] warning) '))
-    try:
-        if numSol <= 0:
-            continue
+    numSol = int(raw_input('How many candidate solutions do you have? (You can not put in 2, or there will be a [DivideByZero] warning) '))            
 numObj = " "
 while type(numObj) != int:
     numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be a [DivideByZero] warning) '))
-    try: 
-        if numObj <= 0:
-            continue
 rpArr = [[ [0 for j in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 rpArrOvPref = [ [ 0 for j in range(numSol)] for i in range(numObj)]
 nrpArr = [[ [0 for i in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
