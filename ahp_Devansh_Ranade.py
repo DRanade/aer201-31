@@ -4,10 +4,10 @@ from random import randint
 from scipy import linalg
 numSol = " "
 while type(numSol) != int:
-    numSol = int(raw_input('How many candidate solutions do you have? '))
+    numSol = int(raw_input('How many candidate solutions do you have? (You can not put in 2, or there will be a [DivideByZero] warning) '))
 numObj = " "
 while type(numObj) != int:
-    numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be an error) '))
+    numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be a [DivideByZero] warning) '))
 rpArr = [[ [0 for j in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 rpArrOvPref = [ [ 0 for j in range(numSol)] for i in range(numObj)]
 nrpArr = [[ [0 for i in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
@@ -84,5 +84,8 @@ print "Below is a list of consistency ratios for each solution preference matric
 print np.array(CRs_RPs)
 print "Below is your consistency ratio for your objective matrix: "
 print CR_RI
+print "If all of the above critical ratios are below 0.1, you are good and consistent!"
+print "Below are the decision values for your candidate alternatives (higher is better):"
+print Dvalues
 print "This code was written by Devansh Ranade, Team 31, TIRE Project "
 print "Good luck on the proposal!"
