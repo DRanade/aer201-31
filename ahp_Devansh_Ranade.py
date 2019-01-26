@@ -23,7 +23,7 @@ for i in range(numObj):
     for j in range(numSol):
         rpArr[i][j][j] = 1.0
         for k in range(numSol-1,j,-1):
-            while typerpArr[i][j][k] not in ([str(i+1) for i in range(9)]+[str(-i-1) for i in range(9)]):
+            while rpArr[i][j][k] not in ([str(i+1) for i in range(9)]+[str(-i-1) for i in range(9)]):
                 rpArr[i][j][k] = raw_input("How do you rate alternative "+str(j+1)+" compared to alternative "+str(k+1)+" with respect to Objective "+str(i+1)+"? ")
             rpArr[i][j][k] = float(rpArr[i][j][k])
             if (rpArr[i][j][k] < 0):
