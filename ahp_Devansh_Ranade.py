@@ -64,6 +64,12 @@ for j in range(len(Dvalues)):
         accum += objArrOvPref[i]*rpArrOvPref[i][j]
     Dvalues[j] = accum
 
+sumD = 0
+for i in Dvalues:
+    sumD += i
+for i in range(len(Dvalues)):
+    Dvalues[i] /= sumD
+
 CIs_RPs = [0 for i in range(numObj)]
 CRs_RPs = [0 for i in range(numObj)]
 CI_RI = 0
