@@ -24,7 +24,7 @@ for i in range(numObj):
         rpArr[i][j][j] = 1.0
         for k in range(numSol-1,j,-1):
             while rpArr[i][j][k] not in ([str(a+1) for a in range(9)]+[str(-a-1) for a in range(9)]):
-                rpArr[i][j][k] = raw_input("How do you rate alternative "+str(j+1)+" compared to alternative "+str(k+1)+" with respect to Objective "+str(i+1)+"? ")
+                rpArr[i][j][k] = raw_input("How do you rate candidate solution "+str(j+1)+" compared to candidate solution "+str(k+1)+" with respect to Objective "+str(i+1)+"? ")
             rpArr[i][j][k] = float(rpArr[i][j][k])
             if (rpArr[i][j][k] < 0):
                 rpArr[i][j][k] = 1/(-rpArr[i][j][k])
