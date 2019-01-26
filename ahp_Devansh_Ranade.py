@@ -66,3 +66,4 @@ print np.array(CRs_RPs)
 print "Below is your consistency ratio for your objective matrix: "
 print CR_RI
 print "This code was written by Devansh Ranade, Team 31, TIRE Project "
+print "Good luck on the proposal!"
