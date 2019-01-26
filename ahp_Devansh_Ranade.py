@@ -3,7 +3,7 @@ import scipy
 from random import randint
 from scipy import linalg
 numSol = int(raw_input('How many candidate solutions do you have? '))
-numObj = int(raw_input('How many objectives do you have? '))
+numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be an error) '))
 rpArr = [[ [0 for j in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 rpArrOvPref = [ [ 0 for j in range(numSol)] for i in range(numObj)]
 nrpArr = [[ [0 for i in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
