@@ -2,17 +2,32 @@ import numpy as np
 import scipy
 from random import randint
 from scipy import linalg
-numSol = int(raw_input('How many candidate solutions do you have? '))
-numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be an error) '))
+numSol = " "
+while type(numSol) != int:
+    numSol = int(raw_input('How many candidate solutions do you have? '))
+numObj = " "
+while type(numObj) != int:
+    numObj = int(raw_input('How many objectives do you have? (You can not put in 2, or there will be an error) '))
 rpArr = [[ [0 for j in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 rpArrOvPref = [ [ 0 for j in range(numSol)] for i in range(numObj)]
 nrpArr = [[ [0 for i in range(numSol)] for i in range(numSol) ] for i in range(numObj)]
 
+print "For all comparisons follow the observe the following guideline:"
+print "Question: How does ___A____ compare with ___B___?"
+print "If you prefer A over B, put a positive number between 1 and 9."
+print "If you prefer B over A, put a negative number between 1 and 9."
+print "Magnitude determines strength of preference."
+print "1 means equally preferred."
+print "9 means strongly preferred."
 for i in range(numObj):
     for j in range(numSol):
         rpArr[i][j][j] = 1.0
         for k in range(numSol-1,j,-1):
-            rpArr[i][j][k] = float(raw_input("How do you rate alternative "+str(j+1)+" compared to alternative "+str(k+1)+" with respect to Objective "+str(i+1)+"? "))
+            while typerpArr[i][j][k] not in ([str(i+1) for i in range(9)]+[str(-i-1) for i in range(9)]):
+                rpArr[i][j][k] = raw_input("How do you rate alternative "+str(j+1)+" compared to alternative "+str(k+1)+" with respect to Objective "+str(i+1)+"? ")
+            rpArr[i][j][k] = float(rpArr[i][j][k])
+            if (rpArr[i][j][k] < 0):
+                rpArr[i][j][k] = 1/(-rpArr[i][j][k])
             rpArr[i][k][j] = 1/rpArr[i][j][k]
     for j in range(numSol): # normalizes columns
         sumCol = 0
@@ -28,7 +43,11 @@ objArrOvPref = [ 0 for j in range(numObj)]
 for j in range(numObj):
     objArr[j][j] = 1.0
     for k in range(numObj-1,j,-1):
-        objArr[j][k] = float(raw_input("How do you rate objective "+str(j+1)+" compared to objective "+str(k+1)+"? "))
+        while objArr[j][k] not in ([str(i+1) for i in range(9)]+[str(-i-1) for i in range(9)]):
+            objArr[j][k] = raw_input("How do you rate objective "+str(j+1)+" compared to objective "+str(k+1)+"? ")
+        objArr[j][k] = float(objArr[j][k])
+        if (objArr[j][k] < 0):
+            objArr[j][k] = 1/(-objArr[j][k])
         objArr[k][j] = 1/objArr[j][k]
 for j in range(numObj): # normalizes columns
     sumCol = 0
