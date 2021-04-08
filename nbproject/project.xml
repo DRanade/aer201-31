@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>mainCode</name>
+            <name>05_RTC</name>
+            <creation-uuid>a381a942-30bc-44da-b2f6-1bda6a168fd7</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../../src/I2C</sourceRootElem>
+                <sourceRootElem>../../src/CharacterLCD</sourceRootElem>
+                <sourceRootElem>../../src/PIC18F4620</sourceRootElem>
+                <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../../src/CharacterLCD</sourceRootElem>
+                <sourceRootElem>../../../src/I2C</sourceRootElem>
+                <sourceRootElem>../../../src/PIC18F4620</sourceRootElem>
+                <sourceRootElem>../../02_CharacterLCD_2/02_CharacterLCD_2.X</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+                <confElem>
+                    <name>newConfig</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
